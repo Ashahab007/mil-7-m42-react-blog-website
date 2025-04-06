@@ -3,7 +3,7 @@ import { FaBookmark } from "react-icons/fa";
 
 const Blog = ({ blog }) => {
   console.log(blog);
-  const { id, author, author_img, posted_date, title, cover } = blog;
+  const { id, author, author_img, posted_date, title, cover, hashtags } = blog;
 
   return (
     <div>
@@ -22,6 +22,11 @@ const Blog = ({ blog }) => {
             A card component has a figure, a body part, and inside body there
             are title and actions parts
           </p>
+          <div className="flex gap-1">
+            {hashtags.map((hash) => (
+              <button className="btn">{hash}</button>
+            ))}
+          </div>
           <div className="card-actions">
             <button className="btn btn-primary">Mark As Read</button>
           </div>
