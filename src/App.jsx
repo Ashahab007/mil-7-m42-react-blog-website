@@ -14,11 +14,18 @@ function App() {
   };
   // console.log(bookmark);
 
-  const handleCountTime = (time) => {
+  const handleCountTime = (time, id) => {
     const totalTime = countTime + time;
     setCountTime(totalTime);
+    handleRemoveBookmark(id);
   };
   console.log(countTime);
+
+  const handleRemoveBookmark = (id) => {
+    console.log(id);
+    const remainingBookmark = bookmark.map((mark) => mark.id != id);
+    setBookmark(remainingBookmark);
+  };
 
   return (
     <>
