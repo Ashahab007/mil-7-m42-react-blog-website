@@ -23,7 +23,7 @@ function App() {
 
   const handleRemoveBookmark = (id) => {
     console.log(id);
-    const remainingBookmark = bookmark.map((mark) => mark.id != id);
+    const remainingBookmark = bookmark.filter((mark) => mark.id != id);
     setBookmark(remainingBookmark);
   };
 
